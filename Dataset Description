@@ -1,0 +1,11 @@
+For this project, I am using the EMG2Pose Dataset provided by Facebook Research – EMG2Pose (https://github.com/facebookresearch/emg2pose/tree/main)
+Source: Downloaded directly from the official EMG2Pose GitHub repository.
+Size: 600 MB.
+
+Content:
+Surface EMG signals collected from forearm muscles.
+3D joint angle trajectories corresponding to hand/arm movements.
+Synchronized timestamps to align EMG activity with joint kinematics.
+Format: Data is stored in .hdf5 files, where each file contains multiple sessions of EMG recordings and corresponding pose information.
+
+This dataset is designed for gesture recognition and EMG-to-pose estimation research, enabling the study of how muscle activity maps to human hand/arm movement.
