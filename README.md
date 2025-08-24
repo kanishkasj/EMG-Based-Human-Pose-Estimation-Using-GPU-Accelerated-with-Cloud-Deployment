@@ -8,13 +8,13 @@ This project aims to design and implement a GPU-accelerated for EMG based human 
 3.	Deploy the model into Cloud – deploy the final model into AWS EC2 and expose it as a REST API endpoint, allowing users to send inputs remotely and receive respective output. 
 
 
-## 📌 Project Overview
+## Project Overview
 This project focuses on **real-time human pose estimation** using **Electromyography (EMG) signals**.  
 We design and implement a **GPU-accelerated model** for predicting joint angles from EMG input, and deploy it to the **cloud** for real-time inference.
 
 ---
 
-## 🎯 Objectives
+## Objectives
 - Cloud and train a model: Preprocess EMG and joint-angle datasets (HDF5 + metadata).
 - Implement **GPU-accelerated training**:
   - Baseline with **XGBoost (GPU hist)**.
@@ -24,7 +24,7 @@ We design and implement a **GPU-accelerated model** for predicting joint angles 
 
 ---
 
-## 🏗️ System Workflow
+## System Workflow
 1. **Data Collection & Preprocessing**
    - Input: HDF5 files (EMG + joint angles).
    - Apply band-pass filtering, rectification, smoothing, normalization.
