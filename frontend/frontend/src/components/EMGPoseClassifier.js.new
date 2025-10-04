@@ -1,0 +1,129 @@
+import React, { useState } from 'react';
+
+function EMGPoseClassifier() {
+  const [file, setFile] = useState(null);
+  const [dragActive, setDragActive] = useState(false);
+
+  const CpuIcon = () => (
+    <svg className="h-12 w-12 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 9V5c0-1.105.895-2 2-2h4c1.105 0 2 .895 2 2v4h4c1.105 0 2 .895 2 2v4c0 1.105-.895 2-2 2h-4v4c0 1.105-.895 2-2 2h-4c-1.105 0-2-.895-2-2v-4H6c-1.105 0-2-.895-2-2v-4c0-1.105.895-2 2-2h2zm2-3h4v4h4v4h-4v4h-4v-4H6v-4h4V6z"/>
+    </svg>
+  );
+
+  const UploadIcon = () => (
+    <svg className="h-8 w-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+    </svg>
+  );
+
+  const handleDrag = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === "dragenter" || e.type === "dragover") {
+      setDragActive(true);
+    } else if (e.type === "dragleave") {
+      setDragActive(false);
+    }
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      setFile(e.dataTransfer.files[0]);
+    }
+  };
+
+  const handleFileChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      setFile(event.target.files[0]);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none bg-gradient-to-tr from-purple-50/10 to-white"></div>
+
+      <div className="relative z-10 container mx-auto px-4 py-8">
+        {/* Header */}
+        <div className="text-center mb-6">
+          <div className="inline-block bg-white p-3 rounded-lg shadow-sm mb-4">
+            <CpuIcon />
+          </div>
+          <h1 className="text-3xl font-semibold text-purple-600 mb-2">
+            EMG Pose Classifier
+          </h1>
+          <p className="text-sm text-gray-600">
+            Upload your EMG signal data and let our AI predict the corresponding pose with
+            <span className="text-purple-600"> advanced machine learning</span>
+          </p>
+        </div>
+
+        {/* Main Content */}
+        <div className="max-w-lg mx-auto">
+          <div className="bg-white shadow-sm rounded-lg">
+            <div 
+              className={`relative border-2 border-dashed rounded-lg p-8 text-center transition-all duration-300 cursor-pointer ${
+                dragActive 
+                  ? 'border-purple-400 bg-purple-50/30' 
+                  : 'border-gray-200 hover:border-purple-400 hover:bg-purple-50/10'
+              }`}
+              onDragEnter={handleDrag}
+              onDragLeave={handleDrag}
+              onDragOver={handleDrag}
+              onDrop={handleDrop}
+              onClick={() => document.getElementById('file-upload').click()}
+            >
+              <input
+                type="file"
+                id="file-upload"
+                className="hidden"
+                onChange={handleFileChange}
+                accept=".csv,.hdf5,.h5"
+              />
+              
+              <div className="mb-4">
+                <div className="mx-auto w-8">
+                  <UploadIcon />
+                </div>
+              </div>
+              
+              <p className="text-base font-medium text-gray-900 mb-1">
+                {file ? file.name : 'Drop your EMG data file here'}
+              </p>
+              <p className="text-sm text-gray-500 mb-4">
+                or <span className="text-purple-600">click to browse</span>
+              </p>
+              
+              <div className="flex items-center justify-center space-x-2">
+                <span className="px-2 py-1 bg-purple-50 text-purple-600 rounded text-xs">CSV</span>
+                <span className="px-2 py-1 bg-purple-50 text-purple-600 rounded text-xs">HDF5</span>
+                <span className="px-2 py-1 bg-purple-50 text-purple-600 rounded text-xs">H5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="flex items-center justify-center mt-4 space-x-4 text-xs text-gray-400">
+          <div className="flex items-center space-x-1">
+            <span>CUDA Accelerated</span>
+          </div>
+          <div className="flex items-center space-x-1">
+            <span>XGBoost ML</span>
+          </div>
+          <div className="flex items-center space-x-1">
+            <span>Real-time Processing</span>
+          </div>
+        </div>
+
+        <div className="text-center mt-4 text-xs text-gray-400">
+          <p>Powered by advanced machine learning algorithms and CUDA acceleration</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default EMGPoseClassifier;
