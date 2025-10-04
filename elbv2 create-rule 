@@ -1,0 +1,72 @@
+{
+    "Rules": [
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:eu-north-1:418255731247:listener-rule/app/emg-classifier-dev-alb/2e4dcd6aa8cbaeee/b9fed32facc5ebd0/29c225ba910921cf",
+            "Priority": "101",
+            "Conditions": [
+                {
+                    "Field": "path-pattern",
+                    "Values": [
+                        "/health*",
+                        "/model-info*",
+                        "/docs*",
+                        "/test*",
+                        "/predict*"
+                    ],
+                    "PathPatternConfig": {
+                        "Values": [
+                            "/health*",
+                            "/model-info*",
+                            "/docs*",
+                            "/test*",
+                            "/predict*"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-api-tg/255b1ed487f2b191",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-api-tg/255b1ed487f2b191",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:eu-north-1:418255731247:listener-rule/app/emg-classifier-dev-alb/2e4dcd6aa8cbaeee/b9fed32facc5ebd0/aaefd2039ea341ff",
+            "Priority": "default",
+            "Conditions": [],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": true
+        }
+    ]
+}

@@ -1,0 +1,619 @@
+{
+    "service": {
+        "serviceArn": "arn:aws:ecs:eu-north-1:418255731247:service/emg-classifier-dev-cluster/emg-classifier-frontend-service",
+        "serviceName": "emg-classifier-frontend-service",
+        "clusterArn": "arn:aws:ecs:eu-north-1:418255731247:cluster/emg-classifier-dev-cluster",
+        "loadBalancers": [
+            {
+                "targetGroupArn": "arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47",
+                "containerName": "frontend",
+                "containerPort": 3000
+            }
+        ],
+        "serviceRegistries": [],
+        "status": "ACTIVE",
+        "desiredCount": 1,
+        "runningCount": 1,
+        "pendingCount": 0,
+        "launchType": "FARGATE",
+        "platformVersion": "LATEST",
+        "platformFamily": "Linux",
+        "taskDefinition": "arn:aws:ecs:eu-north-1:418255731247:task-definition/emg-classifier-frontend:2",
+        "deploymentConfiguration": {
+            "deploymentCircuitBreaker": {
+                "enable": false,
+                "rollback": false
+            },
+            "maximumPercent": 200,
+            "minimumHealthyPercent": 100,
+            "strategy": "ROLLING",
+            "bakeTimeInMinutes": 0
+        },
+        "deployments": [
+            {
+                "id": "ecs-svc/9516737102478186616",
+                "status": "PRIMARY",
+                "taskDefinition": "arn:aws:ecs:eu-north-1:418255731247:task-definition/emg-classifier-frontend:2",
+                "desiredCount": 0,
+                "pendingCount": 0,
+                "runningCount": 0,
+                "failedTasks": 0,
+                "createdAt": "2025-10-01T13:09:52.748000+05:30",
+                "updatedAt": "2025-10-01T13:09:52.748000+05:30",
+                "launchType": "FARGATE",
+                "platformVersion": "1.4.0",
+                "platformFamily": "Linux",
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-0552c45ff6bda32f5",
+                            "subnet-0905e9ed5b2ec84c7"
+                        ],
+                        "securityGroups": [
+                            "sg-0a62e41a41e3bd73e"
+                        ],
+                        "assignPublicIp": "DISABLED"
+                    }
+                },
+                "rolloutState": "IN_PROGRESS",
+                "rolloutStateReason": "ECS deployment ecs-svc/9516737102478186616 in progress."
+            },
+            {
+                "id": "ecs-svc/9905745166883861208",
+                "status": "ACTIVE",
+                "taskDefinition": "arn:aws:ecs:eu-north-1:418255731247:task-definition/emg-classifier-frontend:2",
+                "desiredCount": 1,
+                "pendingCount": 0,
+                "runningCount": 1,
+                "failedTasks": 0,
+                "createdAt": "2025-10-01T13:04:06.095000+05:30",
+                "updatedAt": "2025-10-01T13:07:32.598000+05:30",
+                "launchType": "FARGATE",
+                "platformVersion": "1.4.0",
+                "platformFamily": "Linux",
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-0552c45ff6bda32f5",
+                            "subnet-0905e9ed5b2ec84c7"
+                        ],
+                        "securityGroups": [
+                            "sg-0a62e41a41e3bd73e"
+                        ],
+                        "assignPublicIp": "DISABLED"
+                    }
+                },
+                "rolloutState": "COMPLETED",
+                "rolloutStateReason": "ECS deployment ecs-svc/9905745166883861208 completed."
+            }
+        ],
+        "roleArn": "arn:aws:iam::418255731247:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "events": [
+            {
+                "id": "5c84fa16-e16f-43d1-ba8a-c673a8e7dfcf",
+                "createdAt": "2025-10-01T13:07:32.608000+05:30",
+                "message": "(service emg-classifier-frontend-service) has reached a steady state."
+            },
+            {
+                "id": "62f88b53-94f6-43c5-85f3-008bf0880645",
+                "createdAt": "2025-10-01T13:07:32.607000+05:30",
+                "message": "(service emg-classifier-frontend-service) (deployment ecs-svc/9905745166883861208) deployment completed."
+            },
+            {
+                "id": "16d5098f-7175-448d-ab65-afc39509f1c5",
+                "createdAt": "2025-10-01T13:06:17.187000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/6672741821437513162) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "170bd4db-b56c-409e-a93b-0a605b3daf1f",
+                "createdAt": "2025-10-01T13:06:17.180000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "6b8320e4-3acb-47c4-88ab-ae029a9b009d",
+                "createdAt": "2025-10-01T13:06:15.844000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task 6a4bd74f790641fe93ebca42f6c414a1)."
+            },
+            {
+                "id": "daf3e9b5-01a4-40be-a506-a5805a704129",
+                "createdAt": "2025-10-01T13:05:21.716000+05:30",
+                "message": "(service emg-classifier-frontend-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "7cc21afe-3428-48d0-98f8-b99c17e621f4",
+                "createdAt": "2025-10-01T13:04:27.280000+05:30",
+                "message": "(service emg-classifier-frontend-service) has started 1 tasks: (task b1907f47390e4ef7b562769f7cfb4f1c)."
+            },
+            {
+                "id": "8603759b-ef22-4b91-ac26-410467f41e58",
+                "createdAt": "2025-10-01T12:47:25.316000+05:30",
+                "message": "(service emg-classifier-frontend-service) has reached a steady state."
+            },
+            {
+                "id": "b460b264-36ad-4a26-98ae-4cd62049229b",
+                "createdAt": "2025-10-01T12:47:25.315000+05:30",
+                "message": "(service emg-classifier-frontend-service) (deployment ecs-svc/6672741821437513162) deployment completed."
+            },
+            {
+                "id": "dd109338-c31e-4828-a2fd-a6f694c04210",
+                "createdAt": "2025-10-01T12:46:19.289000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/7542083599136361795) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "9df6e3a7-e589-4afd-ae55-c146e9994849",
+                "createdAt": "2025-10-01T12:46:19.283000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "202fc0a6-24d5-421b-9876-07fadeb91fed",
+                "createdAt": "2025-10-01T12:46:17.871000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task 7fd8e973e9c743dca3e1512e4461a3bf)."
+            },
+            {
+                "id": "836ecab7-a508-4622-96f6-e58b843d8a14",
+                "createdAt": "2025-10-01T12:45:23.872000+05:30",
+                "message": "(service emg-classifier-frontend-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "022bfefe-3952-42de-af59-94de46900e09",
+                "createdAt": "2025-10-01T12:44:29.810000+05:30",
+                "message": "(service emg-classifier-frontend-service) has started 1 tasks: (task 6a4bd74f790641fe93ebca42f6c414a1)."
+            },
+            {
+                "id": "32f4a557-1755-46d3-9c97-907b2861998c",
+                "createdAt": "2025-10-01T12:19:55.173000+05:30",
+                "message": "(service emg-classifier-frontend-service) has reached a steady state."
+            },
+            {
+                "id": "c58a1669-90ce-4e80-85c9-b614103b9f5c",
+                "createdAt": "2025-10-01T12:19:55.172000+05:30",
+                "message": "(service emg-classifier-frontend-service) (deployment ecs-svc/7542083599136361795) deployment completed."
+            },
+            {
+                "id": "b3fd3689-84a4-49aa-94a5-3df0b7f5463d",
+                "createdAt": "2025-10-01T12:18:48.954000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/9333312583468284247) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "79ec607d-5285-4a9d-8ea0-c18cab8303de",
+                "createdAt": "2025-10-01T12:18:48.950000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "eca08ed2-1814-48cd-a5e4-43c846e941e4",
+                "createdAt": "2025-10-01T12:18:38.577000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task f66e7be161584b0eb664a329df5dab27)."
+            },
+            {
+                "id": "0dd7a2b8-7b3e-4a49-ab4a-9bd13ce8c1c2",
+                "createdAt": "2025-10-01T12:17:33.442000+05:30",
+                "message": "(service emg-classifier-frontend-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "b2f3eefd-3fad-43a7-aaf7-01a47c2aa4a9",
+                "createdAt": "2025-10-01T12:16:38.237000+05:30",
+                "message": "(service emg-classifier-frontend-service) has started 1 tasks: (task 7fd8e973e9c743dca3e1512e4461a3bf)."
+            },
+            {
+                "id": "c46001ee-2eb9-4f7c-b160-dfb1f3c3b729",
+                "createdAt": "2025-10-01T12:15:31.534000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "f23df734-7988-43b1-b350-efb6efe7dad2",
+                "createdAt": "2025-10-01T12:15:31.437000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/0827421891563008188) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "d0e01337-6da5-46f6-a05e-21119f1d285b",
+                "createdAt": "2025-10-01T12:15:31.433000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "aa0b0102-d16d-4a25-b20e-6e8d7e76f999",
+                "createdAt": "2025-10-01T12:15:21.273000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task 5487a9b75d624576994f1f09f46e37f1)."
+            },
+            {
+                "id": "d5fbd44a-f374-49ee-a312-d69e3e7219b5",
+                "createdAt": "2025-10-01T12:15:21.226000+05:30",
+                "message": "(service emg-classifier-frontend-service) (task 5487a9b75d624576994f1f09f46e37f1) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47) due to (reason Health checks failed)."
+            },
+            {
+                "id": "d4d7bde7-734d-4026-8d06-efb928d2994b",
+                "createdAt": "2025-10-01T12:14:15.857000+05:30",
+                "message": "(service emg-classifier-frontend-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "a87d4fc3-3c7d-4cef-a1e2-4f5a887625aa",
+                "createdAt": "2025-10-01T12:13:43.832000+05:30",
+                "message": "(service emg-classifier-frontend-service) has started 1 tasks: (task 5487a9b75d624576994f1f09f46e37f1)."
+            },
+            {
+                "id": "c99964f6-e3d4-4409-9d84-ab5b107f5e05",
+                "createdAt": "2025-10-01T12:12:24.555000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "3645045c-72b4-4fa7-b0a2-a726cdb95896",
+                "createdAt": "2025-10-01T12:12:24.479000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/0827421891563008188) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "4d6a1acc-eb29-4080-94de-f7bcd8081d93",
+                "createdAt": "2025-10-01T12:12:24.473000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "18c42748-11fb-4630-98d3-7098b4d6c371",
+                "createdAt": "2025-10-01T12:12:14.064000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task 72f0d6dde8174275a041b51bb261d57b)."
+            },
+            {
+                "id": "6c43895a-1c79-417d-9654-826700412f05",
+                "createdAt": "2025-10-01T12:12:14.013000+05:30",
+                "message": "(service emg-classifier-frontend-service) (task 72f0d6dde8174275a041b51bb261d57b) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47) due to (reason Health checks failed)."
+            },
+            {
+                "id": "fa71ba1c-086b-48c9-8a55-6ab60c90cf85",
+                "createdAt": "2025-10-01T12:11:08.142000+05:30",
+                "message": "(service emg-classifier-frontend-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "978eb060-8b35-48b0-9e86-ad305e756de4",
+                "createdAt": "2025-10-01T12:10:47.176000+05:30",
+                "message": "(service emg-classifier-frontend-service) has started 1 tasks: (task 72f0d6dde8174275a041b51bb261d57b)."
+            },
+            {
+                "id": "1f152004-9d8b-48ac-b0fe-0e3855ed317a",
+                "createdAt": "2025-10-01T12:09:17.627000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "3a2c7c7f-bda1-4e2c-9a7c-63828f164f79",
+                "createdAt": "2025-10-01T12:09:17.562000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/0827421891563008188) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "abb0f0db-37e0-4001-ad4f-dedf05ed5d56",
+                "createdAt": "2025-10-01T12:09:17.556000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "67f40dc5-cc17-49fd-bcf1-d2c164be7427",
+                "createdAt": "2025-10-01T12:09:08.045000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task fb258ca16b90484699834e2dcde34e70)."
+            },
+            {
+                "id": "4cc76194-776e-4ec5-a604-30dd5828caa4",
+                "createdAt": "2025-10-01T12:09:07.986000+05:30",
+                "message": "(service emg-classifier-frontend-service) (task fb258ca16b90484699834e2dcde34e70) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47) due to (reason Health checks failed)."
+            },
+            {
+                "id": "76d30792-9f0f-41ea-9dde-de40266b2b3a",
+                "createdAt": "2025-10-01T12:08:02.556000+05:30",
+                "message": "(service emg-classifier-frontend-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "7370566d-05f7-490a-93c0-e6a047157570",
+                "createdAt": "2025-10-01T12:07:30.222000+05:30",
+                "message": "(service emg-classifier-frontend-service) has started 1 tasks: (task fb258ca16b90484699834e2dcde34e70)."
+            },
+            {
+                "id": "e19edc4e-04f3-4813-b593-bb012ad8d08e",
+                "createdAt": "2025-10-01T12:06:10.793000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "28e50dfd-5d7c-4d2b-b3a0-2a6230543ad4",
+                "createdAt": "2025-10-01T12:06:10.723000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/0827421891563008188) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "8d7f642d-d8c4-4694-a2f0-69dd7b872a03",
+                "createdAt": "2025-10-01T12:06:10.718000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "9554ec65-d135-4cd3-b93b-c37935fdbce1",
+                "createdAt": "2025-10-01T12:06:01.240000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task 95452cbdbb094a598dd940a0f37189e5)."
+            },
+            {
+                "id": "3611d9f2-daeb-4beb-974d-cf23fee1d201",
+                "createdAt": "2025-10-01T12:06:01.193000+05:30",
+                "message": "(service emg-classifier-frontend-service) (task 95452cbdbb094a598dd940a0f37189e5) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47) due to (reason Health checks failed)."
+            },
+            {
+                "id": "5ef86119-871b-4eb1-8ca4-178749ef93d5",
+                "createdAt": "2025-10-01T12:04:55.336000+05:30",
+                "message": "(service emg-classifier-frontend-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "68d5e357-bd17-4790-abee-59794d846cbc",
+                "createdAt": "2025-10-01T12:04:23.603000+05:30",
+                "message": "(service emg-classifier-frontend-service) has started 1 tasks: (task 95452cbdbb094a598dd940a0f37189e5)."
+            },
+            {
+                "id": "c6686a6b-d508-4f84-bf5c-f1bb32d0a820",
+                "createdAt": "2025-10-01T12:03:15.971000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/0827421891563008188) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "af247a8c-f731-4ce6-bf55-956d281162d6",
+                "createdAt": "2025-10-01T12:03:06.197000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "70417498-40c5-41f4-878a-4a054eb6c5de",
+                "createdAt": "2025-10-01T12:03:04.129000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task 83d2f92f6ba54b39bad661decc3357d3)."
+            },
+            {
+                "id": "f7d42135-bebd-4eed-bb09-a55e14c21c87",
+                "createdAt": "2025-10-01T12:03:04.087000+05:30",
+                "message": "(service emg-classifier-frontend-service) (task 83d2f92f6ba54b39bad661decc3357d3) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47) due to (reason Health checks failed)."
+            },
+            {
+                "id": "4bb7f66e-97e3-4130-b17e-e2f5037d3fd6",
+                "createdAt": "2025-10-01T12:01:47.521000+05:30",
+                "message": "(service emg-classifier-frontend-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "45a12251-3b0f-4f59-898b-925330954815",
+                "createdAt": "2025-10-01T12:01:26.206000+05:30",
+                "message": "(service emg-classifier-frontend-service) has started 1 tasks: (task 83d2f92f6ba54b39bad661decc3357d3)."
+            },
+            {
+                "id": "43e2dab5-904a-407f-8858-727f1810422c",
+                "createdAt": "2025-10-01T12:00:10.412000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "dd867f0d-7aee-4946-be50-f94e40bde522",
+                "createdAt": "2025-10-01T12:00:10.340000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/0827421891563008188) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "3cf601e2-c19a-49f5-a815-6824ec823d89",
+                "createdAt": "2025-10-01T12:00:10.336000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "117109d7-fdf9-4959-8cf2-623d776c9cc0",
+                "createdAt": "2025-10-01T12:00:08.676000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task a6da596259884fd89f66fb8e77b9b68a)."
+            },
+            {
+                "id": "865b5e06-38de-4c9a-9c23-285d4707eb76",
+                "createdAt": "2025-10-01T12:00:08.634000+05:30",
+                "message": "(service emg-classifier-frontend-service) (task a6da596259884fd89f66fb8e77b9b68a) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47) due to (reason Health checks failed)."
+            },
+            {
+                "id": "ab98f9a3-bcbf-474f-8f8d-c06d2256ad63",
+                "createdAt": "2025-10-01T11:59:03.132000+05:30",
+                "message": "(service emg-classifier-frontend-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "87f56046-683e-45e3-816c-88af55769e38",
+                "createdAt": "2025-10-01T11:58:41.698000+05:30",
+                "message": "(service emg-classifier-frontend-service) has started 1 tasks: (task a6da596259884fd89f66fb8e77b9b68a)."
+            },
+            {
+                "id": "f8dac519-07fd-46e9-8329-c5812b79324c",
+                "createdAt": "2025-10-01T11:57:24.519000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "0af2f92b-89c2-43f4-91c3-a9dac99e20ef",
+                "createdAt": "2025-10-01T11:57:24.453000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/0827421891563008188) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "655cad36-9878-4a04-ba1c-87ade4d47faa",
+                "createdAt": "2025-10-01T11:57:24.448000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "477e29cb-6810-469a-9486-958f734c2fa4",
+                "createdAt": "2025-10-01T11:57:14.642000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task c9165786ba764b8c98934c09b3d346b3)."
+            },
+            {
+                "id": "addfbc59-1048-4ffa-bcec-31a0a02cfa8e",
+                "createdAt": "2025-10-01T11:57:14.602000+05:30",
+                "message": "(service emg-classifier-frontend-service) (task c9165786ba764b8c98934c09b3d346b3) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47) due to (reason Health checks failed)."
+            },
+            {
+                "id": "81c38603-faaf-4cbf-b0ac-8c0011c7f145",
+                "createdAt": "2025-10-01T11:56:08.488000+05:30",
+                "message": "(service emg-classifier-frontend-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "91d64542-6a49-44d7-ac63-a898e89a2602",
+                "createdAt": "2025-10-01T11:55:46.293000+05:30",
+                "message": "(service emg-classifier-frontend-service) has started 1 tasks: (task c9165786ba764b8c98934c09b3d346b3)."
+            },
+            {
+                "id": "f358ac41-5d0a-4535-8ffb-4e8ca0ac5901",
+                "createdAt": "2025-10-01T11:54:28.029000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "81745eea-a80e-4620-8928-90b153800c67",
+                "createdAt": "2025-10-01T11:54:27.972000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/0827421891563008188) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "5fdd0cd1-2067-4b35-860d-e1e705569b72",
+                "createdAt": "2025-10-01T11:54:27.967000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "4a53c4fc-9231-48a7-b72e-415566ef8abe",
+                "createdAt": "2025-10-01T11:54:17.838000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task 28125969e2dd4c62bffcb9ab82d45fa4)."
+            },
+            {
+                "id": "786bafec-469b-4e62-8a04-8cf6f9779e4d",
+                "createdAt": "2025-10-01T11:54:17.801000+05:30",
+                "message": "(service emg-classifier-frontend-service) (task 28125969e2dd4c62bffcb9ab82d45fa4) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47) due to (reason Health checks failed)."
+            },
+            {
+                "id": "c0ef46d5-a448-491a-80c2-5db1f52a48df",
+                "createdAt": "2025-10-01T11:53:02.117000+05:30",
+                "message": "(service emg-classifier-frontend-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "d471bec1-93bd-49e7-9769-bc0a7a73805b",
+                "createdAt": "2025-10-01T11:52:40.522000+05:30",
+                "message": "(service emg-classifier-frontend-service) has started 1 tasks: (task 28125969e2dd4c62bffcb9ab82d45fa4)."
+            },
+            {
+                "id": "376b6b29-6d6d-4b78-b806-19c7f7747845",
+                "createdAt": "2025-10-01T11:51:23.153000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "b20f4b1c-d4b6-4783-9c28-79247f59890b",
+                "createdAt": "2025-10-01T11:51:23.099000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/0827421891563008188) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "40ba0201-68bf-4df2-8b39-2e28e2976b98",
+                "createdAt": "2025-10-01T11:51:23.093000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "e1f7613b-8c82-4a8e-b3f3-c29638d56a92",
+                "createdAt": "2025-10-01T11:51:21.197000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task 30e49e4b5fea47b39790c76d11253703)."
+            },
+            {
+                "id": "ded882dc-ba03-41bb-807b-90b9a6812bbd",
+                "createdAt": "2025-10-01T11:51:21.153000+05:30",
+                "message": "(service emg-classifier-frontend-service) (task 30e49e4b5fea47b39790c76d11253703) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47) due to (reason Health checks failed)."
+            },
+            {
+                "id": "f476a7be-d6b0-47cd-9f3e-ba05632d001d",
+                "createdAt": "2025-10-01T11:50:15.010000+05:30",
+                "message": "(service emg-classifier-frontend-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "1271a034-bcf3-4b4a-864f-d32b826d8cd4",
+                "createdAt": "2025-10-01T11:49:44.676000+05:30",
+                "message": "(service emg-classifier-frontend-service) has started 1 tasks: (task 30e49e4b5fea47b39790c76d11253703)."
+            },
+            {
+                "id": "54bebe97-c9db-477a-9240-1ee9cd829ccb",
+                "createdAt": "2025-10-01T11:48:47.985000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "5c7c7660-34f7-4164-adc9-bc6707afe7b3",
+                "createdAt": "2025-10-01T11:48:47.897000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/4952345270527260191) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "af0fc34f-7392-4437-bc48-6250f8929b9a",
+                "createdAt": "2025-10-01T11:48:47.890000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "0d580b2c-8e99-447c-b5f8-3c809a779460",
+                "createdAt": "2025-10-01T11:48:38.166000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task 7b5f2f8a908f42bf94e43fcb398cfac8)."
+            },
+            {
+                "id": "662d9f51-c8d2-4b5c-b130-f190ecf5e385",
+                "createdAt": "2025-10-01T11:48:38.120000+05:30",
+                "message": "(service emg-classifier-frontend-service) (task 7b5f2f8a908f42bf94e43fcb398cfac8) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47) due to (reason Health checks failed)."
+            },
+            {
+                "id": "b7fd468d-632b-400e-8c2c-532da7349e81",
+                "createdAt": "2025-10-01T11:47:10.633000+05:30",
+                "message": "(service emg-classifier-frontend-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "60fad7af-59cf-4df3-9548-8fe92ed26dba",
+                "createdAt": "2025-10-01T11:46:37.537000+05:30",
+                "message": "(service emg-classifier-frontend-service) has started 1 tasks: (task 7b5f2f8a908f42bf94e43fcb398cfac8)."
+            },
+            {
+                "id": "660dbdbd-e885-49fe-9bd3-13cbdaed6d36",
+                "createdAt": "2025-10-01T11:45:30.758000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/4952345270527260191) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "60bc3a8c-9b78-403d-85fc-c74f4b61562b",
+                "createdAt": "2025-10-01T11:45:20.397000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "f29f33a5-442e-422e-bd0a-2cc2a86449e4",
+                "createdAt": "2025-10-01T11:45:19.512000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task 47ed6612bcb04a8885d90294b9cccd93)."
+            },
+            {
+                "id": "c08afd6e-24cb-436b-afb7-f0673357f676",
+                "createdAt": "2025-10-01T11:45:19.467000+05:30",
+                "message": "(service emg-classifier-frontend-service) (task 47ed6612bcb04a8885d90294b9cccd93) (port 3000) is unhealthy in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47) due to (reason Health checks failed)."
+            },
+            {
+                "id": "d0443104-39e9-4e36-98ea-194f0a6a37ea",
+                "createdAt": "2025-10-01T11:44:03.580000+05:30",
+                "message": "(service emg-classifier-frontend-service) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "b409512e-ecde-497b-836f-a766c0b61c2c",
+                "createdAt": "2025-10-01T11:43:29.704000+05:30",
+                "message": "(service emg-classifier-frontend-service) has started 1 tasks: (task 47ed6612bcb04a8885d90294b9cccd93)."
+            },
+            {
+                "id": "b85873a5-1bad-4157-8987-1e3c68b11be9",
+                "createdAt": "2025-10-01T11:42:12.761000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "19632cac-7385-4a74-afd8-8379fbb15560",
+                "createdAt": "2025-10-01T11:42:12.693000+05:30",
+                "message": "(service emg-classifier-frontend-service, taskSet ecs-svc/4952345270527260191) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "43997f4a-5583-4ea4-b42e-83c05b3a3f98",
+                "createdAt": "2025-10-01T11:42:12.688000+05:30",
+                "message": "(service emg-classifier-frontend-service) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-north-1:418255731247:targetgroup/emg-classifier-fe-tg/c00dfd12f4729e47)"
+            },
+            {
+                "id": "23aa5f09-cb57-4af6-9748-a7cacf3ba172",
+                "createdAt": "2025-10-01T11:42:02.729000+05:30",
+                "message": "(service emg-classifier-frontend-service) has stopped 1 running tasks: (task b744a71a5334488fb1b0ac6a48fd298a)."
+            }
+        ],
+        "createdAt": "2025-09-30T23:20:43.156000+05:30",
+        "placementConstraints": [],
+        "placementStrategy": [],
+        "networkConfiguration": {
+            "awsvpcConfiguration": {
+                "subnets": [
+                    "subnet-0552c45ff6bda32f5",
+                    "subnet-0905e9ed5b2ec84c7"
+                ],
+                "securityGroups": [
+                    "sg-0a62e41a41e3bd73e"
+                ],
+                "assignPublicIp": "DISABLED"
+            }
+        },
+        "healthCheckGracePeriodSeconds": 0,
+        "schedulingStrategy": "REPLICA",
+        "deploymentController": {
+            "type": "ECS"
+        },
+        "createdBy": "arn:aws:iam::418255731247:user/kanishkasj19005",
+        "enableECSManagedTags": false,
+        "propagateTags": "NONE",
+        "enableExecuteCommand": false,
+        "availabilityZoneRebalancing": "DISABLED"
+    }
+}
