@@ -1,0 +1,5 @@
+project_name       = "emg-classifier"
+environment        = "dev"
+aws_region         = "eu-north-1"
+api_image_url      = "418255731247.dkr.ecr.eu-north-1.amazonaws.com/emg-classifier-api:latest"
+frontend_image_url = "418255731247.dkr.ecr.eu-north-1.amazonaws.com/emg-classifier-frontend:latest"
